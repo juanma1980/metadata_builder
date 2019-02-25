@@ -1,8 +1,14 @@
 HOW-TO GENERATE THE APPSTREAM INFO
 -----------------------------------
-Para generar la información para appstream trabajremos sobre el chroot disponible en /home/lliruex/workspace/appstream-generator/debootstrap
-La shell "metadata_builder.sh" se encarga de todo por nosotros pero dejo aquí una breve descripción de los pasos a realizar.
-1) Preparar el entorno de chroot
+In order to generate appstream metainfo it's needed a working chroot environment.
+The metadata_builder.sh needs some basic info to work so is needed to adjust the variables $REPO to the repo's path and $SUITE to the target suite (xenial, bbionic...)
+
+The process is automated and only needs to adjust $REPO and $SUITE and a valid asgen.conf at the repo's path.
+
+However the manual steps are:
+
+*) A valid chroot
+
 	Necesitaremos un entorno de chroot funcional. Para ello necesitaremos que tenga /proc, /sys y demás directorios del sistema disponible
 
 sudo cp /proc/mounts /home/lliurex/workspace/appstream-generator/debootstrap/etc/mtab
